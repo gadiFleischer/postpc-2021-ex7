@@ -1,15 +1,16 @@
 package com.example.postpc_ex7;
+import java.io.Serializable;
 import java.util.UUID;
 
 
 
-public class OrderModel {
+public class OrderModel implements Serializable {
     private final String id;
-    private String costumerName;
-    private int pickles;
-    private boolean hummus;
-    private boolean tahini;
-    private String comment;
+    String costumerName;
+    int pickles;
+    boolean hummus;
+    boolean tahini;
+    String comment;
     private String status; //waiting,in-progress,ready,done
 
     public OrderModel(String costumerName, int pickles, boolean hummus, boolean tahini, String comment){
