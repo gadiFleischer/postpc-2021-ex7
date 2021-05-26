@@ -4,9 +4,9 @@ import java.util.UUID;
 
 
 public class OrderModel {
-    private String id;
+    private final String id;
     private String costumerName;
-    private int pickles; //[0,10]
+    private int pickles;
     private boolean hummus;
     private boolean tahini;
     private String comment;
