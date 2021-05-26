@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">postpc_ex7</string>
-    <string name="insert_number_of_pickles_up_to_10">How many pickles?[0,10]</string>
+    <string name="insert_number_of_pickles_up_to_10">How many pickles?</string>
     <string name="enter_costumer_name">enter your name:</string>
     <string name="mark_for_hummus">mark for hummus</string>
     <string name="mark_for_tahini">mark for tahini</string>
     <string name="new_proj_bruh">new proj bruh!</string>
+    <string name="add_order">Add order</string>
 </resources>
