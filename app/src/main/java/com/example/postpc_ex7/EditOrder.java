@@ -47,8 +47,8 @@ public class EditOrder extends AppCompatActivity {
            //edit in db
             Toast toast = Toast.makeText(this,"your order has been saved", Toast.LENGTH_SHORT);
             toast.show();
-            Intent MainActivityIntent = new Intent(this, MainActivity.class); //delete this
-            this.startActivity(MainActivityIntent); //delete this
+            Intent temp = new Intent(this, ReadyOrder.class); //delete this
+            this.startActivity(temp); //delete this
         });
         deleteButton.setOnClickListener(view -> {
             //delete in db

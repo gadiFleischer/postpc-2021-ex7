@@ -18,5 +18,7 @@
         </activity>
         <activity android:name=".CreateOrder" />
         <activity android:name=".EditOrder" />
+        <activity android:name=".inProgress" />
+        <activity android:name=".ReadyOrder" />
     </application>
 </manifest>
