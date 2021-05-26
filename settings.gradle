@@ -1,0 +1,2 @@
+rootProject.name = "postpc_ex7"
+include ':app'
