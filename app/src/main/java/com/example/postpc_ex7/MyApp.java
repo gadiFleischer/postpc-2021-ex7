@@ -6,7 +6,6 @@ import android.preference.PreferenceManager;
 
 public class MyApp extends Application {
     public String orderId;
-    public boolean isOrder;
 
     SharedPreferences sharedPref;
     Context context;
@@ -15,20 +14,19 @@ public class MyApp extends Application {
         this.context=context;
         this.orderId="";
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        loadTodoList();
+        loadOrderId();
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
     }
-    public void loadTodoList() {
+    public void loadOrderId() {
         this.orderId= sharedPref.getString("order", "");
-        this.isOrder= !this.orderId.equals("");
-
     }
 
-    public void saveTodoList() {
+    public void saveOrderId(String id) {
+        this.orderId=id;
         sharedPref.edit().putString("order", this.orderId).apply();
     }
 }
