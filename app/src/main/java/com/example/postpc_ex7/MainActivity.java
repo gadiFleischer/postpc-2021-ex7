@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.MainActivityButton);
-        myApp = new MyApp(this);
+//        myApp = MyApp.getInstance();
+        myApp= new MyApp(this);
         FirebaseApp.initializeApp(this);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         this.orderId=myApp.orderId;

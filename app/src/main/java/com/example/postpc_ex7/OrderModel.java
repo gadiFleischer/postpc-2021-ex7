@@ -5,12 +5,12 @@ import java.util.UUID;
 
 
 public class OrderModel implements Serializable {
-    private final String id;
-    String costumerName;
-    int pickles;
-    boolean hummus;
-    boolean tahini;
-    String comment;
+    public String id;
+    public String costumerName;
+    public int pickles;
+    public boolean hummus;
+    public boolean tahini;
+    public String comment;
     private String status; //waiting,in-progress,ready,done
 
     public OrderModel(String costumerName, int pickles, boolean hummus, boolean tahini, String comment){
@@ -23,6 +23,8 @@ public class OrderModel implements Serializable {
         this.status="waiting";
     }
 
+    public OrderModel(){
+    }
 
 
 
