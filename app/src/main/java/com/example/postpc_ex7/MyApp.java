@@ -6,13 +6,11 @@ import android.preference.PreferenceManager;
 
 public class MyApp extends Application {
     public String orderId;
-//    private static MyApp staticSp = null;
     SharedPreferences sharedPref;
 
     public MyApp(Context context){
         this.orderId="";
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-//        staticSp=this;
         loadOrderId();
     }
 
@@ -29,8 +27,5 @@ public class MyApp extends Application {
         this.orderId=id;
         sharedPref.edit().putString("order", this.orderId).apply();
     }
-//    public static MyApp getInstance()
-//    {
-//        return staticSp;
-//    }
+
 }

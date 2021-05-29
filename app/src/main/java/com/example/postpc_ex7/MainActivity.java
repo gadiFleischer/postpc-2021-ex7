@@ -18,13 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.MainActivityButton);
-//        myApp = MyApp.getInstance();
+
         myApp= new MyApp(this);
         FirebaseApp.initializeApp(this);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         this.orderId=myApp.orderId;
-
 
         if(!this.orderId.equals("")){
             db.collection("orders").document(this.orderId).get().addOnSuccessListener(documentSnapshot -> {
@@ -54,13 +52,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        button.setOnClickListener(view -> {
-            Intent newOrderIntent = new Intent(this, CreateOrder.class);
-            this.startActivity(newOrderIntent);
-        });
-
-
-
     }
 }
