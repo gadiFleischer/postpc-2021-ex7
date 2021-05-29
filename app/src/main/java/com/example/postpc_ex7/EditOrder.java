@@ -45,34 +45,28 @@ public class EditOrder extends AppCompatActivity {
         saveButton = findViewById(R.id.buttonSave);
         deleteButton = findViewById(R.id.buttonDelete);
         String id = myApp.orderId;
-        db.collection("orders").document(id).get().
-        addOnSuccessListener(documentSnapshot -> {
-            String CostumerName = documentSnapshot.getString("costumerName");
-            Number pickles = (Number)documentSnapshot.get("pickles");
-            Boolean hummus = documentSnapshot.getBoolean("hummus");
-            Boolean tahini = documentSnapshot.getBoolean("tahini");
-            String comment = documentSnapshot.getString("comment");
 
-            numOfpickles.setText(String.valueOf(pickles));
-            commentText.setText(comment);
-            String nameText = "Thank you:"+CostumerName+" for ordering";
+        db.collection("orders").document(id).get().addOnSuccessListener(documentSnapshot -> {
+            this.order = documentSnapshot.toObject(OrderModel.class);
+            numOfpickles.setText(String.valueOf(order.pickles));
+            commentText.setText(order.comment);
+            String nameText = "Thank you:"+order.costumerName+" for ordering";
             costumerName.setText(nameText);
-            ishummus.setChecked(hummus);
-            istahini.setChecked(tahini);
-
+            ishummus.setChecked(order.hummus);
+            istahini.setChecked(order.tahini);
         });
-
 
         saveButton.setOnClickListener(view -> {
-           //edit in db
+            db.collection("orders").document(id).update("comment", commentText.getText().toString());
+            db.collection("orders").document(id).update("pickles", Integer.parseInt(numOfpickles.getText().toString()));
+            db.collection("orders").document(id).update("hummus", ishummus.isChecked());
+            db.collection("orders").document(id).update("tahini", istahini.isChecked());
+
             Toast toast = Toast.makeText(this,"your order has been saved", Toast.LENGTH_SHORT);
             toast.show();
-
-//            Intent temp = new Intent(this, ReadyOrder.class); //delete this
-//            this.startActivity(temp); //delete this
         });
         deleteButton.setOnClickListener(view -> {
-            //delete in db
+            db.collection("orders").document(id).delete();
             Toast toast = Toast.makeText(this,"your order has been Deleted", Toast.LENGTH_LONG);
             toast.show();
             Intent MainActivityIntent = new Intent(this, MainActivity.class);
