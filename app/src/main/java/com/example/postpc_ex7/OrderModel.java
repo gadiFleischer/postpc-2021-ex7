@@ -11,7 +11,7 @@ public class OrderModel implements Serializable {
     public boolean hummus;
     public boolean tahini;
     public String comment;
-    private String status; //waiting,in-progress,ready,done
+    public String status; //waiting,in-progress,ready,done
 
     public OrderModel(String costumerName, int pickles, boolean hummus, boolean tahini, String comment){
         this.id = UUID.randomUUID().toString();
