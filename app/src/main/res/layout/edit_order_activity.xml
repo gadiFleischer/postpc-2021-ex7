@@ -22,6 +22,7 @@
         android:id="@+id/textCostumerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="your name:"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,15 +45,14 @@
         android:id="@+id/picklesNumberEdit"
         android:layout_width="54dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="560dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toEndOf="@+id/pickleText"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCostumerName"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <CheckBox
         android:id="@+id/checkBoxHummusEdit"

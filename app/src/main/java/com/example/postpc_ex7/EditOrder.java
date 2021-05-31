@@ -67,6 +67,7 @@ public class EditOrder extends AppCompatActivity {
         });
         deleteButton.setOnClickListener(view -> {
             db.collection("orders").document(id).delete();
+            this.myApp.saveOrderId("");
             Toast toast = Toast.makeText(this,"your order has been Deleted", Toast.LENGTH_LONG);
             toast.show();
             Intent MainActivityIntent = new Intent(this, MainActivity.class);
@@ -81,11 +82,13 @@ public class EditOrder extends AppCompatActivity {
                         {
                             Intent inProgressIntent = new Intent(this, InProgress.class);
                             this.startActivity(inProgressIntent);
+                            finish();
                         }
                         else if (status != null && status.equals("ready"))
                         {
                             Intent readyIntent = new Intent(this, ReadyOrder.class);
                             this.startActivity(readyIntent);
+                            finish();
                         }
                     }
                 });

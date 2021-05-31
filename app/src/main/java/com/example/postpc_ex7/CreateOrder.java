@@ -49,6 +49,7 @@ public class CreateOrder extends AppCompatActivity {
             Intent editActivity = new Intent(this, EditOrder.class);
             editActivity.putExtra("order",order);
             this.startActivity(editActivity);
+            finish();
         });
     }
 

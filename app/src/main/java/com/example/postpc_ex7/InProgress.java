@@ -31,6 +31,7 @@ public class InProgress extends AppCompatActivity {
                         {
                             Intent readyIntent = new Intent(this, ReadyOrder.class);
                             this.startActivity(readyIntent);
+                            finish();
                         }
                     }
                 });

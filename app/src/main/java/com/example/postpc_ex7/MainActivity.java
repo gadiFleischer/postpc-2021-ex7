@@ -31,23 +31,28 @@ public class MainActivity extends AppCompatActivity {
                 if(OrderStatus==null){
                     Intent createOrderIntent = new Intent(this, CreateOrder.class);
                     this.startActivity(createOrderIntent);
+                    finish();
                 }else{
                     switch (OrderStatus) {
                         case "waiting":
                             Intent editActivityIntent = new Intent(this, EditOrder.class);
                             startActivity(editActivityIntent);
+                            finish();
                             break;
                         case "in-progress":
                             Intent inProgressIntent  = new Intent(this, InProgress.class);
                             startActivity(inProgressIntent);
+                            finish();
                             break;
                         case "ready":
                             Intent readyIntent  = new Intent(this, ReadyOrder.class);
                             startActivity(readyIntent);
+                            finish();
                             break;
                         default:
                             Intent createOrderIntent = new Intent(this, CreateOrder.class);
                             this.startActivity(createOrderIntent);
+                            finish();
                     }
                 }
             });

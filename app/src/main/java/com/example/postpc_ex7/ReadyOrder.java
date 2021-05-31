@@ -31,6 +31,7 @@ public class ReadyOrder extends AppCompatActivity {
             toast.show();
             Intent mainActivityIntent = new Intent(this, MainActivity.class);
             this.startActivity(mainActivityIntent);
+            finish();
         });
 
     }
