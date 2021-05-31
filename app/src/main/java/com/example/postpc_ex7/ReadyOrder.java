@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
 
 public class ReadyOrder extends AppCompatActivity {
 
@@ -21,8 +22,9 @@ public class ReadyOrder extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         this.myApp= new MyApp(this);
         myApp.loadOrderId();
-        Button gotItButton = findViewById(R.id.ButtonGotIt);
 
+
+        Button gotItButton = findViewById(R.id.ButtonGotIt);
         gotItButton.setOnClickListener(view -> {
             db.collection("orders").document(myApp.orderId).update("status", "done");
             Toast toast = Toast.makeText(this,"bon appetit:)", Toast.LENGTH_LONG);
@@ -32,4 +34,5 @@ public class ReadyOrder extends AppCompatActivity {
         });
 
     }
+
 }
