@@ -21,8 +21,6 @@ public class ReadyOrder extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         this.myApp= new MyApp(this);
-        myApp.loadOrderId();
-
 
         Button gotItButton = findViewById(R.id.ButtonGotIt);
         gotItButton.setOnClickListener(view -> {

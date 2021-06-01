@@ -17,8 +17,8 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
     }
+
     public void loadOrderId() {
         this.orderId= sharedPref.getString("order", "");
     }

@@ -20,7 +20,6 @@ public class InProgress extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         this.myApp= new MyApp(this);
-        myApp.loadOrderId();
         String id = myApp.orderId;
 
         changesFromDB = db.collection("orders").document(id)

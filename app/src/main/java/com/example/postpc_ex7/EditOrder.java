@@ -29,8 +29,6 @@ public class EditOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_order_activity);
 
-
-
         //get views
         costumerName = findViewById(R.id.textCostumerName);
         numOfpickles = findViewById(R.id.picklesNumberEdit);
